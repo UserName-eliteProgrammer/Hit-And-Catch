@@ -21,7 +21,7 @@ public class ServerSide {
         int fileId = 0;
 
         // Main container, set the name.
-        JFrame jFrame = new JFrame("WittCode's Server");
+        JFrame jFrame = new JFrame("SERVER");
         // Set the size of the frame.
         jFrame.setSize(400, 400);
         // Give the frame a box layout that stacks its children on top of each other.
@@ -40,7 +40,7 @@ public class ServerSide {
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
         // Title above panel.
-        JLabel jlTitle = new JLabel("WittCode's File Receiver");
+        JLabel jlTitle = new JLabel("File Receiver");
         // Change the font of the title.
         jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
         // Add a border around the title for spacing.
@@ -189,7 +189,7 @@ public class ServerSide {
     public static JFrame createFrame(String fileName, byte[] fileData, String fileExtension) {
 
         // Frame to hold everything.
-        JFrame jFrame = new JFrame("WittCode's File Downloader");
+        JFrame jFrame = new JFrame("File Downloader");
         // Set the size of the frame.
         jFrame.setSize(400, 400);
 
@@ -199,7 +199,7 @@ public class ServerSide {
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
 
         // Title above panel.
-        JLabel jlTitle = new JLabel("WittCode's File Downloader");
+        JLabel jlTitle = new JLabel("File Downloader");
         // Center the label title horizontally.
         jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
         // Change the font family, size, and style.
@@ -256,7 +256,7 @@ public class ServerSide {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Create the file with its name.
-                File fileToDownload = new File(fileName);
+                File fileToDownload = new File("C:\\Users\\Manish Sharma\\Downloads\\" + fileName);
                 try {
                     // Create a stream to write data to the file.
                     FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);

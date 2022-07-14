@@ -14,7 +14,7 @@ public class ClientSide {
         final File[] fileToSend = new File[1];
 
         // Set the frame to house everything.
-        JFrame jFrame = new JFrame("WittCode's Client");
+        JFrame jFrame = new JFrame("CLIENT");
         // Set the size of the frame.
         jFrame.setSize(450, 450);
         // Make the layout to be box layout that places its children on top of each other.
@@ -23,7 +23,7 @@ public class ClientSide {
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Title above panel.
-        JLabel jlTitle = new JLabel("WittCode's File Sender");
+        JLabel jlTitle = new JLabel("File Sender");
         // Change the font family, size, and style.
         jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
         // Add a border around the label for spacing.
@@ -94,9 +94,9 @@ public class ClientSide {
                         // Create an input stream into the file you want to send.
                         FileInputStream fileInputStream = new FileInputStream(fileToSend[0].getAbsolutePath());
                         // Create a socket connection to connect with the server.
-                        Socket socket = new Socket("localhost", 1234);
+                        Socket socketObj = new Socket("localhost", 1234);
                         // Create an output stream to write to write to the server over the socket connection.
-                        DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
+                        DataOutputStream dataOutputStream = new DataOutputStream(socketObj.getOutputStream());
                         // Get the name of the file you want to send and store it in filename.
                         String fileName = fileToSend[0].getName();
                         // Convert the name of the file into an array of bytes to be sent to the server.
